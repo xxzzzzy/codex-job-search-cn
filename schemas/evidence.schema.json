@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/xxzzzzy/codex-job-search-cn/schemas/evidence.schema.json",
+  "title": "Evidence",
+  "type": "object",
+  "required": ["id", "type", "title", "facts", "source"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "type": {
+      "enum": [
+        "education",
+        "employment",
+        "project",
+        "publication",
+        "patent",
+        "award",
+        "certificate",
+        "portfolio",
+        "reference",
+        "other"
+      ]
+    },
+    "title": {"type": "string"},
+    "organization": {"type": "string"},
+    "start_date": {"type": "string"},
+    "end_date": {"type": "string"},
+    "facts": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "value", "status"],
+        "properties": {
+          "name": {"type": "string"},
+          "value": {},
+          "unit": {"type": "string"},
+          "status": {"enum": ["documented", "user-confirmed", "unverified"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "skills": {"type": "array", "items": {"type": "string"}},
+    "source": {
+      "type": "object",
+      "required": ["kind", "reference"],
+      "properties": {
+        "kind": {"enum": ["document", "user-statement", "public-link", "generated-stub"]},
+        "reference": {"type": "string"},
+        "captured_at": {"type": "string", "format": "date-time"}
+      },
+      "additionalProperties": false
+    },
+    "confidence": {"enum": ["high", "medium", "low"]}
+  },
+  "additionalProperties": false
+}

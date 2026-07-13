@@ -1,0 +1,4 @@
+interface:
+  display_name: "中国简历审查"
+  short_description: "审查中文或英文简历的事实、证据、岗位匹配、隐私与ATS解析风险"
+  default_prompt: "Use $resume-audit to audit my resume before I submit it."

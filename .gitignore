@@ -24,6 +24,13 @@ job_scraper/seen_jobs.json
 job_scraper/*.md
 *_BehavioralReport.pdf
 linkedin_Profile.pdf
+private/
+outputs/
+.env
+.env.*
+!.env.example
+*github-token*
+*.docx
 
 # Personal photos and signatures
 *.jpg
@@ -41,6 +48,7 @@ Thumbs.db
 
 # Memory files (Claude Code user-specific)
 .claude/projects/
+.codex/
 
 # Skills lock (auto-generated)
 skills-lock.json

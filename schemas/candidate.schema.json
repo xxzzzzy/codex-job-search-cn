@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/xxzzzzy/codex-job-search-cn/schemas/candidate.schema.json",
+  "title": "Candidate",
+  "type": "object",
+  "required": ["id", "identity", "targets", "privacy", "updated_at"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "identity": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string"},
+        "location": {"type": "string"},
+        "phone": {"type": "string"},
+        "email": {"type": "string"},
+        "links": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role"],
+        "properties": {
+          "role": {"type": "string"},
+          "industries": {"type": "array", "items": {"type": "string"}},
+          "locations": {"type": "array", "items": {"type": "string"}},
+          "languages": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "preferences": {"type": "object"},
+    "privacy": {
+      "type": "object",
+      "required": ["optional_fields"],
+      "properties": {
+        "optional_fields": {
+          "type": "object",
+          "additionalProperties": {"type": "boolean"}
+        },
+        "external_processing": {
+          "enum": ["ask", "allow", "deny"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "updated_at": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/xxzzzzy/codex-job-search-cn/schemas/claim.schema.json",
+  "title": "Claim",
+  "type": "object",
+  "required": ["id", "text", "evidence_ids", "status", "confidentiality"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "text": {"type": "string", "minLength": 1},
+    "language": {"enum": ["zh-CN", "en", "other"]},
+    "evidence_ids": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "status": {"enum": ["source-backed", "user-confirmed", "needs-confirmation", "rejected"]},
+    "confidentiality": {"enum": ["public", "internal", "sensitive", "unknown"]},
+    "used_in": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}

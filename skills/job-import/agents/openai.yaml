@@ -1,0 +1,4 @@
+interface:
+  display_name: "中国岗位导入"
+  short_description: "从职位文本、网页、截图或文件提取并保存可追溯的中国岗位信息"
+  default_prompt: "Use $job-import to import and structure this Chinese job posting."

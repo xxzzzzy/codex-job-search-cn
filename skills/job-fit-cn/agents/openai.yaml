@@ -1,0 +1,4 @@
+interface:
+  display_name: "中国岗位匹配评估"
+  short_description: "用真实职业证据评估中国岗位的能力、经验、限制、成长性和风险"
+  default_prompt: "Use $job-fit-cn to evaluate whether this role is worth applying for."

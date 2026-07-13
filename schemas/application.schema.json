@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/xxzzzzy/codex-job-search-cn/schemas/application.schema.json",
+  "title": "Application",
+  "type": "object",
+  "required": ["id", "job_id", "status", "events"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "job_id": {"type": "string"},
+    "status": {
+      "enum": [
+        "considering",
+        "drafting",
+        "submitted",
+        "screening",
+        "interviewing",
+        "offer",
+        "rejected",
+        "withdrawn",
+        "no-response"
+      ]
+    },
+    "channel": {"type": "string"},
+    "referrer": {"type": "string"},
+    "fit_report": {"type": "string"},
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "path"],
+        "properties": {
+          "kind": {"type": "string"},
+          "path": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["at", "type"],
+        "properties": {
+          "at": {"type": "string", "format": "date-time"},
+          "type": {"type": "string"},
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "outcome_notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}

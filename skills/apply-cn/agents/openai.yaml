@@ -1,0 +1,4 @@
+interface:
+  display_name: "中国岗位定制申请"
+  short_description: "基于真实职业证据为中国岗位生成并复核简历、沟通材料和投递版本"
+  default_prompt: "Use $apply-cn to tailor my application materials for this role."

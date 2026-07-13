@@ -1,0 +1,39 @@
+{
+  "name": "codex-job-search-cn",
+  "version": "0.1.0",
+  "description": "Codex-native, evidence-grounded job-search workflows for Chinese candidates.",
+  "author": {
+    "name": "xxzzzzy",
+    "url": "https://github.com/xxzzzzy"
+  },
+  "homepage": "https://github.com/xxzzzzy/codex-job-search-cn",
+  "repository": "https://github.com/xxzzzzy/codex-job-search-cn",
+  "license": "MIT",
+  "keywords": [
+    "job-search",
+    "resume",
+    "china",
+    "codex",
+    "career"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "中国求职工作台",
+    "shortDescription": "用真实职业证据完成岗位评估、简历定制和求职复盘",
+    "longDescription": "面向中国求职者的 Codex 原生工作流。建立可追溯职业档案，导入岗位，评估匹配度，并生成经过事实、隐私和 ATS 检查的申请材料。",
+    "developerName": "xxzzzzy",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write",
+      "Document processing"
+    ],
+    "websiteURL": "https://github.com/xxzzzzy/codex-job-search-cn",
+    "defaultPrompt": [
+      "用我的现有简历建立中国求职档案。",
+      "审查这份简历的事实、隐私和 ATS 风险。",
+      "根据这个岗位定制一份真实可信的简历。"
+    ],
+    "brandColor": "#0F766E"
+  }
+}

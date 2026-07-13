@@ -1,3 +1,39 @@
+# Codex Job Search CN
+
+面向中国求职者的本地优先求职工作台，基于
+[MadsLorentzen/ai-job-search](https://github.com/MadsLorentzen/ai-job-search)
+进行中国市场与 Codex 原生适配。
+
+当前版本为 **0.1.0 阶段 0**，已经提供：
+
+- Codex Plugin 清单与仓库级 `AGENTS.md`
+- 可追溯的 Candidate、Evidence、Claim、Job、Application 数据模型
+- 中国求职档案设置、简历审查、岗位导入、岗位匹配和定制申请 Skills
+- 校招、社招、央国企、外企和科研转产业的基础规则
+- 个人信息隔离、平台访问边界和反编造约束
+
+核心理念：
+
+> 简历不是职业事实的存储库，而是针对一个岗位，从真实职业证据中生成的一次视图。
+
+个人数据默认写入 `private/`，生成材料默认写入 `outputs/`，两者均不会进入 Git。
+现阶段不提供批量爬虫、自动投递或真实面试中的隐蔽实时答案。
+
+## Codex Skills
+
+- `$setup-cn`：导入现有材料，建立可追溯职业档案
+- `$resume-audit`：检查事实、证据、岗位匹配、隐私和 ATS 风险
+- `$job-import`：从文本、网页、截图或文件导入岗位
+- `$job-fit-cn`：评估岗位是否值得申请
+- `$apply-cn`：生成并复核岗位定制材料
+
+## Upstream
+
+MIT License 允许本项目修改和分发。原项目仍在下方保留，作为迁移期间的上游说明和
+Claude Code 兼容参考。
+
+---
+
 <p align="center">
   <img src="assets/mascot/pip_flight_loop.gif" alt="Pip, the courier bird" width="200">
 </p>

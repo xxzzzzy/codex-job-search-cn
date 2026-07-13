@@ -1,0 +1,4 @@
+interface:
+  display_name: "中国求职档案设置"
+  short_description: "从现有简历和证明材料建立可追溯、可复用的中国求职职业档案"
+  default_prompt: "Use $setup-cn to build my Chinese job-search profile from my existing resume."
