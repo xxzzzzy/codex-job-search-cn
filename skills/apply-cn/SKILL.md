@@ -51,9 +51,18 @@ Run a separate critique pass focused on:
 
 Apply supported corrections and reject suggestions that require fabrication.
 
+Save review notes separately from the final application material:
+
+- `outputs/application-review-<job-id>.md`
+
+Do not place warnings, unresolved questions, confidence labels, or drafting notes inside a resume,
+cover letter, email, or other material intended for submission.
+
 ## Verification
 
 - Confirm every material claim maps to evidence.
+- Save each Claim as one schema-valid object under `private/claims/<claim-id>.json`.
+- Create or update `private/applications/<job-id>.json` when the workflow is tracking an application.
 - Confirm optional personal fields match the chosen scenario.
 - Render DOCX or PDF when requested and inspect the output.
 - For PDF, verify text extraction, contact details, reading order, page count, clipping, and font rendering.

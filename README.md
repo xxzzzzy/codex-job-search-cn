@@ -27,10 +27,42 @@
 - `$job-fit-cn`：评估岗位是否值得申请
 - `$apply-cn`：生成并复核岗位定制材料
 
+## 在 Codex 中使用
+
+安装插件后，新建一个 Codex 任务，并在包含个人求职材料的工作目录中使用。可以上传
+DOCX、PDF、Markdown 或直接粘贴文本。
+
+首次建立档案：
+
+```text
+使用 $setup-cn 读取我的简历，建立中国求职档案。
+个人数据写入 private/，不要联网，不确定的信息先标记，不要补写。
+```
+
+审查一份简历：
+
+```text
+使用 $resume-audit 审查这份简历，检查事实、证据、隐私、ATS 和岗位针对性。
+```
+
+针对一个岗位完成整套流程：
+
+```text
+使用 $job-import 导入这个 JD；
+使用 $job-fit-cn 评估是否值得投递；
+使用 $apply-cn 生成中文 Markdown 定制简历。
+所有正式材料写入 outputs/，复核备注不要写进正式简历。
+```
+
+`private/` 用于候选人档案、证据、岗位和申请记录，`outputs/` 用于可提交材料和分析报告。
+两者都已加入 `.gitignore`。插件不会自动爬取招聘平台或自动投递。
+
 ## Upstream
 
 MIT License 允许本项目修改和分发。原项目仍在下方保留，作为迁移期间的上游说明和
-Claude Code 兼容参考。
+Claude Code 兼容参考。下方上游项目的 `/setup`、`/scrape`、`/apply` 命令不是本插件
+的 Codex Skills；在 Codex 中请使用上面的 `$setup-cn`、`$job-import`、`$job-fit-cn`
+和 `$apply-cn`。
 
 ---
 

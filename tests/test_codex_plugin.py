@@ -42,6 +42,12 @@ class SkillStructureTests(unittest.TestCase):
             self.assertRegex(content, r"\ndescription:\s*\S")
             self.assertTrue((skill_path.parent / "agents" / "openai.yaml").exists())
 
+    def test_apply_keeps_review_notes_out_of_submission_materials(self):
+        content = (ROOT / "skills" / "apply-cn" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("outputs/application-review-<job-id>.md", content)
+        self.assertIn("private/claims/<claim-id>.json", content)
+        self.assertIn("Do not place warnings", content)
+
 
 class SchemaTests(unittest.TestCase):
     def test_core_schemas_are_valid_json_objects(self):
@@ -68,6 +74,14 @@ class PrivacyDefaultsTests(unittest.TestCase):
         self.assertIn("private/", gitignore)
         self.assertIn("outputs/", gitignore)
         self.assertIn("*github-token*", gitignore)
+
+
+class ReadmeTests(unittest.TestCase):
+    def test_codex_usage_is_distinct_from_upstream_claude_commands(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("## 在 Codex 中使用", readme)
+        self.assertIn("$setup-cn", readme)
+        self.assertIn("不是本插件", readme)
 
 
 if __name__ == "__main__":
